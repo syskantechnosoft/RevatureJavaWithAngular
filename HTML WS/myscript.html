@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <marquee id="demo">
+        <script>document.write(Date());</script>
+    </marquee>
+    <p id="test">
+        This is my Paragraph.
+    </p>
+    <button onclick="changeText()">Change Para Text</button>
+
+    <script>
+        //internal javascript
+        // alert("Waiting!!!");
+
+        // document.getElementById("demo").innerText = Date();
+
+        var x1 = window.prompt("Enter a Number :");
+        var x2 = window.prompt("Enter another Number :");
+        document.write("Result is =" + (parseInt(x1) + parseInt(x2)));
+
+        var x =20;
+
+        var x =45;
+
+        let y= 20;
+
+       y=75; //assigning a different value to existing variable
+
+       let y= 45; //redeclaring a variable which is already declared -- this gives error
+
+        console.log("Welcome to JAVASCRIPT!!!");
+        function changeText() {
+            document.getElementById("test").innerText = "This content is added by JAVASCRIPT";
+        }
+    </script>
+</body>
+
+</html>
