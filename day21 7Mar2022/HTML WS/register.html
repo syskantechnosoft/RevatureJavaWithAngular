@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <style>
+        .lname {
+            background-color: aqua;
+        }
+
+        table {
+            
+        }
+    </style>
+
+    <p style="color:#009900; 
+        font-size:50px; 
+        font-style:italic; 
+        text-align:center;">
+        Hello World
+    </p>
+    <form method="post">
+        <table align="center">
+            <thead>
+                <th> Sl No</th>
+                <th>Key </th>
+                <th> Values</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td> <label style="background-color: blue;">First Name :</label> </td>
+                    <td><input type="text" name="fName" id="fName" /> </td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td> <label class="lname">Last Name :</label> </td>
+                    <td><input type="text" name="lName" id="lName" /> </td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td> <label class="email">Email :</label> </td>
+                    <td><input type="email" name="email" id="email" /> </td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td> <label>Password :</label> </td>
+                    <td><input type="password" name="pwd" id="pwd" /> </td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td> <label>Repeat Password :</label> </td>
+                    <td><input type="password" name="rpwd" id="rpwd" /> </td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td> <label>Mobile :</label> </td>
+                    <td><input type="tel" name="mobile" id="mobile" /> </td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td> <label>Address :</label> </td>
+                    <td><textarea rows="4" cols="30" name="address" id="address"> </textarea> </td>
+                </tr>
+                <tr>
+                    <td>8.</td>
+                    <td> <label>Gender :</label> </td>
+                    <td> <input type="radio" name="gender" value="m" /> Male <input type="radio" name="gender"
+                            value="f" />
+                        Female </td>
+                </tr>
+                <tr>
+                    <td>9.</td>
+                    <td> <label class="qualification">Qualification :</label> </td>
+                    <td> <input type="checkbox" name="ug" value="UG" id="ug" /> U.G <input type="checkbox" name="pg"
+                            value="PG" id="pg" /> P.G <input type="checkbox" name="dip" value="DIPLOMA" id="dip" />
+                        Diploma </td>
+                </tr>
+                <tr>
+                    <td>10.</td>
+                    <td> <label>Percentage :</label> </td>
+                    <td><input type="range" name="per" id="per" min="0" max="100" /> </td>
+                </tr>
+                <tr>
+                    <td>11.</td>
+                    <td> <label>Resume :</label> </td>
+                    <td><input type="file" name="resume" id="resume" /> </td>
+                </tr>
+                <tr>
+                    <td>12.</td>
+                    <td> <label>Date Of Birth :</label> </td>
+                    <td><input type="date" name="dob" id="dob" /> </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td> <input type="reset" value="Clear" /> </td>
+                    <td><input type="submit" value="Register" /> </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>

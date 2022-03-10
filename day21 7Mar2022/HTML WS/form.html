@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum() {
+            let a  = document.getElementById("num1").value;
+            let b = document.getElementById("num2").value;
+            document.getElementById("demo").innerText = (parseInt(a)+ parseInt(b));
+        }
+    </script>
+    <form action="home.html" method="post">
+        <label>Enter a Number :</label>
+        <input type="text" name="num1" id="num1"/>
+        <label>Enter a Number :</label>
+        <input type="text" name="num2"  id="num2" />
+        <input type="button" onclick="sum()" value="Add Data" />
+    </form>
+    <p id="demo"> </p>
+</body>
+</html>
