@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <p> My Para </p>
+    <p id="demo"> This content will be changed later!!!</p>
+
+    <script>
+        // single line javascript comment
+        /* multi line javascript comment 
+          that spans multiple rows */
+        //similar to System.out.println("") in java
+
+
+        // alert("This is an alert with a message!!!!");
+
+        //getting input from user using javascript
+        // x = window.prompt("Enter a number :");
+
+        document.write(" This is coming from JAVASCRIPT!!!");
+        console.log("Welcome to JS World");
+
+        // alert("x is :" + x);  //both alert and prompt Blocking statments it will block other engines execution until it completes
+        //it's operation
+
+        var hello = () => "Hello World!";
+        document.write(typeof (hello));
+        console.log(hello());
+
+
+        var sum = (a, b) => {
+            let result = a + b;
+            return "Sum is" + result;
+        };
+
+        document.write("\n  <br>" + sum(5, 3));
+
+        function onclickEvent() {
+            alert('Hello, You clicked the button');
+        }
+        function onmouseoverEvent() {
+            document.getElementById("para").style.backgroundColor = "green";
+        }
+        function onmouseoutEvent() {
+            document.getElementById("para").style.backgroundColor = "yellow";
+        }
+
+
+    </script>
+
+    <button onclick="onclickEvent()">Click me!! </button>
+
+    <p id="para" onmouseover="onmouseoverEvent()" onmouseout="onmouseoutEvent()">
+        This is a Paragraph....</p>
+</body>
+
+</html>
