@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta
+	content="width=device-width, reimbursement-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	name="viewport">
+<meta content="ie=edge" http-equiv="X-UA-Compatible">
+<title>Thymeleaf Form handling</title>
+<link
+	href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body class="container">
+	<form class="col card p-3 my-5" method="post" th:action="@{/reimbursement/request}"
+		th:object="${reimbursement}">
+		<div class="form-group">
+			<label for="amount">Amount</label> <input class="form-control"
+				id="amount" placeholder="Enter Reimbursement Amount" required
+				autocomplete="off" th:field="*{amount}" type="number" />
+		</div>
+		<div class="form-group">
+			<label for="description">Description</label> <input
+				class="form-control" id="description"
+				placeholder="Enter Details of Request" required autocomplete="off"
+				th:field="*{description}" type="text" />
+		</div>
+		<div class="form-group">
+			<label for="role">Type</label> <select class="form-control "
+				id="type" required th:field="*{type}">
+				<option hidden value="">Select a Reimbursement Type</option>
+				<option
+					th:each="type : ${T(com.springboot.thymeleaf.crud.domain.entities.ReimbType).values()}"
+					th:text="${type}" th:value="${type}"></option>
+			</select>
+		</div>
+		<div>
+			<input class="btn btn-primary" type="submit"
+				value="Create Reimbursement"> <input class="btn btn-dark"
+				type="reset" value="Reset">
+		</div>
+	</form>
+	<div th:if="${reimbursementMessage}" th:utext="${reimbursementMessage}"
+		class="alert alert-success text-center"></div>
+	<table class="table table-striped table-bordered ">
+		<tr>
+			<th>ID</th>
+			<th>Amount</th>
+			<th>Description</th>
+			<th>Type</th>
+			<th>Requestor</th>
+			<th>Resolver</th>
+			<th>Created At</th>
+			<th>Updated At</th>
+			<th>Actions</th>
+		</tr>
+		<tr th:if="${#lists.isEmpty(reimbursements)}">
+			<td class="text-center" colspan="7">No Records found. Add
+				some...!</td>
+		</tr>
+		<tr th:each="reimbursement : ${reimbursements}">
+			<td class="align-middle" th:text="${reimbursement.id}"></td>
+			<td class="align-middle" th:text="${reimbursement.amount}"></td>
+			<td class="align-middle" th:text="${reimbursement.description}"></td>
+			<td class="align-middle" th:text="${reimbursement.type}"></td>
+			<td class="align-middle" th:text="${reimbursement.authour}"></td>
+			<td class="align-middle" th:text="${reimbursement.resolver}"></td>
+			<td class="align-middle" th:text="${reimbursement.submitted}"></td>
+			<td class="align-middle" th:text="${reimbursement.resolved}"></td>
+			<td class="align-middle text-center"><a
+				class="btn btn-secondary" th:href="'/reimbursement/request/' + ${reimbursement.id}">✏</a></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	name="viewport">
+<meta content="ie=edge" http-equiv="X-UA-Compatible">
+<title>Thymeleaf CRUD Example</title>
+<link
+	href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body class="container">
+	<form class="col card p-3 my-5" method="post"
+		th:action="'/reimbursement/request/'+${reimbursement.id}"
+		th:object="${reimbursement}">
+		<div class="form-group">
+			<label for="amount">Amount</label> <input class="form-control"
+				id="amount" placeholder="Enter Reimbursement Amount" required
+				th:field="*{amount}" type="text" />
+		</div>
+		<div class="form-group">
+			<label for="description">Description</label> <input
+				class="form-control" id="description"
+				placeholder="Enter Reimbursement Details" required
+				th:field="*{description}" type="text" />
+		</div>
+		<div class="form-group">
+			<label for="type">Type</label> <select class="form-control "
+				id="type" required th:field="*{type}">
+				<option hidden value="">Select Reimbursement Type</option>
+				<option
+					th:each="type : ${T(com.springboot.thymeleaf.crud.domain.entities.ReimbType).values()}"
+					th:text="${type}" th:value="${type}"></option>
+			</select>
+		</div>
+		<input id="status" type="hidden" th:field="*{status}">
+		<div>
+			<input class="btn btn-success" type="submit" value="Approve"
+				onclick="document.getElementById('status').value='APPROVED'">
+			<input class="btn btn-danger" type="submit" value="Deny" 
+				onclick="document.getElementById('status').value='DENIED'">
+		</div>
+	</form>
+</body>
+</html>
